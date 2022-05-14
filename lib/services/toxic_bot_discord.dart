@@ -66,15 +66,15 @@ class ToxicBotDiscord {
 String convertToxicLevelToStasya(int level) {
   switch (level) {
     case 0:
-      return 'Умеренный уровень токсичности';
+      return 'Умеренный';
     case 1:
-      return 'Уровень токсичности #НЕСТАСЯ';
+      return '#НЕСТАСЯ';
     case 2:
-      return 'Уровень токсичности #ПОКАЕЩЁНЕСТАСЯ';
+      return '#ПОКАЕЩЁНЕСТАСЯ';
     case 3:
-      return 'Уровень токсичности #ПОЧТИСТАСЯ';
+      return '#ПОЧТИСТАСЯ';
     case 4:
-      return 'Теперь наш офис - СТАСЯ';
+      return 'СТАСЯ';
   }
   return 'Странный уровень токсичности';
 }
