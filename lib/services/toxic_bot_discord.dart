@@ -39,8 +39,9 @@ class ToxicBotDiscord {
             if (isSupportedChannelType &&
                 isSupportedChannel &&
                 channel is ITextChannel) {
+              final toxicLevelAsStasya = convertToxicLevelToStasya(toxicLevel);
               final message = MessageBuilder.content(
-                'Воу! Уровень токсичности в офисе изменился. Теперь это ${toxicLevel + 1} уровень',
+                'Воу! Уровень токсичности в офисе изменился. Теперь это "$toxicLevelAsStasya" уровень',
               );
               channel.sendMessage(message);
             }
@@ -60,4 +61,20 @@ class ToxicBotDiscord {
     _toxicLevelSub?.cancel();
     _bot.dispose();
   }
+}
+
+String convertToxicLevelToStasya(int level) {
+  switch (level) {
+    case 0:
+      return 'Умеренный уровень токсичности';
+    case 1:
+      return 'Уровень токсичности #НЕСТАСЯ';
+    case 2:
+      return 'Уровень токсичности #ПОКАЕЩЁНЕСТАСЯ';
+    case 3:
+      return 'Уровень токсичности #ПОЧТИСТАСЯ';
+    case 4:
+      return 'Теперь наш офис - СТАСЯ';
+  }
+  return 'Странный уровень токсичности';
 }
